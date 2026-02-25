@@ -1,0 +1,624 @@
+[
+    {
+        "id": "1",
+        "name": "NeuralPath AI",
+        "description": "NeuralPath AI develops enterprise-grade machine learning infrastructure that enables companies to deploy, monitor, and scale AI models in production. Their platform reduces ML deployment time by 80%.",
+        "sector": "AI/ML",
+        "stage": "Series A",
+        "location": "San Francisco, CA",
+        "website": "https://www.tesla.com",
+        "founded": 2021,
+        "funding": "$12M",
+        "employees": "25-50",
+        "logo": "NP",
+        "signals": [
+            {
+                "id": "s1",
+                "type": "funding",
+                "title": "Raised $12M Series A",
+                "date": "2024-11-15",
+                "description": "Led by Sequoia Capital with participation from Y Combinator."
+            },
+            {
+                "id": "s2",
+                "type": "hire",
+                "title": "Hired VP of Engineering",
+                "date": "2024-10-01",
+                "description": "Former Google ML lead joined as VP Engineering."
+            },
+            {
+                "id": "s3",
+                "type": "product",
+                "title": "Launched AutoDeploy v2.0",
+                "date": "2024-09-20",
+                "description": "Major platform update with support for LLM deployment."
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "name": "GreenStack Energy",
+        "description": "GreenStack is building next-generation battery management systems for commercial solar installations, using AI to optimize energy storage and distribution.",
+        "sector": "CleanTech",
+        "stage": "Seed",
+        "location": "Austin, TX",
+        "website": "https://www.nextera.com",
+        "founded": 2022,
+        "funding": "$4.5M",
+        "employees": "10-25",
+        "logo": "GS",
+        "signals": [
+            {
+                "id": "s4",
+                "type": "funding",
+                "title": "Closed $4.5M Seed Round",
+                "date": "2024-08-10",
+                "description": "Led by Climate Capital."
+            },
+            {
+                "id": "s5",
+                "type": "partnership",
+                "title": "Partnership with SolarEdge",
+                "date": "2024-07-15",
+                "description": "Strategic integration partnership announced."
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "name": "HealthBridge",
+        "description": "HealthBridge provides an interoperability platform that connects disparate healthcare systems, enabling seamless patient data exchange between hospitals, clinics, and pharmacies.",
+        "sector": "HealthTech",
+        "stage": "Series B",
+        "location": "Boston, MA",
+        "website": "https://www.epic.com",
+        "founded": 2019,
+        "funding": "$35M",
+        "employees": "100-200",
+        "logo": "HB",
+        "signals": [
+            {
+                "id": "s6",
+                "type": "funding",
+                "title": "Raised $35M Series B",
+                "date": "2024-12-01",
+                "description": "Led by Andreessen Horowitz."
+            },
+            {
+                "id": "s7",
+                "type": "press",
+                "title": "Featured in TechCrunch",
+                "date": "2024-11-20",
+                "description": "Named one of the top 50 digital health startups."
+            },
+            {
+                "id": "s8",
+                "type": "hire",
+                "title": "Appointed new CTO",
+                "date": "2024-10-15",
+                "description": "Former Microsoft Azure Health lead."
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "name": "FinLedger",
+        "description": "FinLedger offers blockchain-based compliance and audit trail solutions for financial institutions, automating regulatory reporting and reducing compliance costs by 60%.",
+        "sector": "FinTech",
+        "stage": "Series A",
+        "location": "New York, NY",
+        "website": "https://www.jpmorgan.com",
+        "founded": 2020,
+        "funding": "$18M",
+        "employees": "50-100",
+        "logo": "FL",
+        "signals": [
+            {
+                "id": "s9",
+                "type": "funding",
+                "title": "Raised $18M Series A",
+                "date": "2024-06-20",
+                "description": "Led by Goldman Sachs."
+            },
+            {
+                "id": "s10",
+                "type": "product",
+                "title": "Launched RegAI Module",
+                "date": "2024-05-10",
+                "description": "AI-powered regulatory compliance module."
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "name": "EduVerse",
+        "description": "EduVerse creates immersive learning experiences using VR/AR technology for K-12 education, making complex subjects like science and history interactive and engaging.",
+        "sector": "EdTech",
+        "stage": "Pre-Seed",
+        "location": "Los Angeles, CA",
+        "website": "https://www.khanacademy.org",
+        "founded": 2023,
+        "funding": "$1.5M",
+        "employees": "5-10",
+        "logo": "EV",
+        "signals": [
+            {
+                "id": "s11",
+                "type": "funding",
+                "title": "Raised $1.5M Pre-Seed",
+                "date": "2024-09-01",
+                "description": "From angel investors and an education-focused fund."
+            },
+            {
+                "id": "s12",
+                "type": "product",
+                "title": "Beta Launch",
+                "date": "2024-08-15",
+                "description": "Launched beta with 10 partner schools."
+            }
+        ]
+    },
+    {
+        "id": "6",
+        "name": "CyberVault",
+        "description": "CyberVault provides zero-trust security infrastructure for mid-market enterprises, including identity management, threat detection, and automated incident response.",
+        "sector": "Cybersecurity",
+        "stage": "Series B",
+        "location": "Washington, DC",
+        "website": "https://www.crowdstrike.com",
+        "founded": 2018,
+        "funding": "$45M",
+        "employees": "100-200",
+        "logo": "CV",
+        "signals": [
+            {
+                "id": "s13",
+                "type": "funding",
+                "title": "Raised $45M Series B",
+                "date": "2024-10-10",
+                "description": "Led by Accel Partners."
+            },
+            {
+                "id": "s14",
+                "type": "press",
+                "title": "Won RSA Innovation Award",
+                "date": "2024-09-15",
+                "description": "Recognized for zero-trust innovation."
+            },
+            {
+                "id": "s15",
+                "type": "hire",
+                "title": "Expanded Sales Team",
+                "date": "2024-08-01",
+                "description": "Hired 15 new enterprise sales reps."
+            }
+        ]
+    },
+    {
+        "id": "7",
+        "name": "AgriFlow",
+        "description": "AgriFlow uses satellite imagery and IoT sensors to provide precision agriculture insights, helping farmers optimize crop yields and reduce water usage by up to 40%.",
+        "sector": "AgTech",
+        "stage": "Seed",
+        "location": "Denver, CO",
+        "website": "https://www.deere.com",
+        "founded": 2022,
+        "funding": "$6M",
+        "employees": "15-30",
+        "logo": "AF",
+        "signals": [
+            {
+                "id": "s16",
+                "type": "funding",
+                "title": "Raised $6M Seed",
+                "date": "2024-07-20",
+                "description": "Led by AgFunder."
+            },
+            {
+                "id": "s17",
+                "type": "partnership",
+                "title": "Pilot with John Deere",
+                "date": "2024-06-01",
+                "description": "Integration pilot with John Deere equipment."
+            }
+        ]
+    },
+    {
+        "id": "8",
+        "name": "SupplyChainIQ",
+        "description": "SupplyChainIQ offers an AI-powered supply chain visibility platform that predicts disruptions, optimizes inventory, and provides real-time tracking across global logistics networks.",
+        "sector": "Logistics",
+        "stage": "Series A",
+        "location": "Chicago, IL",
+        "website": "https://www.flexport.com",
+        "founded": 2021,
+        "funding": "$15M",
+        "employees": "40-80",
+        "logo": "SI",
+        "signals": [
+            {
+                "id": "s18",
+                "type": "funding",
+                "title": "Raised $15M Series A",
+                "date": "2024-11-01",
+                "description": "Led by Founders Fund."
+            },
+            {
+                "id": "s19",
+                "type": "product",
+                "title": "Released Disruption Predictor",
+                "date": "2024-10-15",
+                "description": "ML-based supply chain disruption prediction tool."
+            }
+        ]
+    },
+    {
+        "id": "9",
+        "name": "PropelHR",
+        "description": "PropelHR automates HR operations for startups and SMBs with AI-driven hiring, onboarding, payroll integration, and employee engagement tools.",
+        "sector": "HR Tech",
+        "stage": "Seed",
+        "location": "Seattle, WA",
+        "website": "https://www.gusto.com",
+        "founded": 2023,
+        "funding": "$3M",
+        "employees": "10-20",
+        "logo": "PH",
+        "signals": [
+            {
+                "id": "s20",
+                "type": "funding",
+                "title": "Raised $3M Seed",
+                "date": "2024-10-05",
+                "description": "From Madrona Venture Group."
+            },
+            {
+                "id": "s21",
+                "type": "product",
+                "title": "AI Hiring Assistant Launch",
+                "date": "2024-09-01",
+                "description": "Automated resume screening and interview scheduling."
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "DataMesh",
+        "description": "DataMesh provides a data fabric platform that unifies data across cloud, on-premise, and edge environments, enabling real-time analytics without data movement.",
+        "sector": "Data Infrastructure",
+        "stage": "Series C",
+        "location": "San Francisco, CA",
+        "website": "https://www.snowflake.com",
+        "founded": 2017,
+        "funding": "$80M",
+        "employees": "200-500",
+        "logo": "DM",
+        "signals": [
+            {
+                "id": "s22",
+                "type": "funding",
+                "title": "Raised $80M Series C",
+                "date": "2024-12-10",
+                "description": "Led by Tiger Global."
+            },
+            {
+                "id": "s23",
+                "type": "press",
+                "title": "Gartner Cool Vendor 2024",
+                "date": "2024-11-05",
+                "description": "Named a Gartner Cool Vendor in Data Management."
+            },
+            {
+                "id": "s24",
+                "type": "hire",
+                "title": "New Chief Data Officer",
+                "date": "2024-09-20",
+                "description": "Former Databricks VP joined as CDO."
+            }
+        ]
+    },
+    {
+        "id": "11",
+        "name": "LegalAI",
+        "description": "LegalAI automates contract review and legal document analysis using NLP, reducing legal review time by 70% for corporate legal teams.",
+        "sector": "LegalTech",
+        "stage": "Series A",
+        "location": "New York, NY",
+        "website": "https://www.thomsonreuters.com",
+        "founded": 2021,
+        "funding": "$10M",
+        "employees": "30-50",
+        "logo": "LA",
+        "signals": [
+            {
+                "id": "s25",
+                "type": "funding",
+                "title": "Raised $10M Series A",
+                "date": "2024-08-20",
+                "description": "Led by Bessemer Venture Partners."
+            },
+            {
+                "id": "s26",
+                "type": "product",
+                "title": "Contract Analyzer 3.0",
+                "date": "2024-07-10",
+                "description": "Major upgrade with multi-language support."
+            }
+        ]
+    },
+    {
+        "id": "12",
+        "name": "RetailSense",
+        "description": "RetailSense offers computer vision analytics for brick-and-mortar retail, providing foot traffic analysis, heatmaps, and customer behavior insights.",
+        "sector": "Retail Tech",
+        "stage": "Seed",
+        "location": "Atlanta, GA",
+        "website": "https://www.shopify.com",
+        "founded": 2022,
+        "funding": "$5M",
+        "employees": "15-25",
+        "logo": "RS",
+        "signals": [
+            {
+                "id": "s27",
+                "type": "funding",
+                "title": "Raised $5M Seed",
+                "date": "2024-09-10",
+                "description": "From TechStars and retail-focused angels."
+            },
+            {
+                "id": "s28",
+                "type": "partnership",
+                "title": "Walmart Pilot Program",
+                "date": "2024-08-01",
+                "description": "Selected for Walmart's innovation pilot."
+            }
+        ]
+    },
+    {
+        "id": "13",
+        "name": "CloudNative Labs",
+        "description": "CloudNative Labs builds developer tools for Kubernetes-native application development, including automated testing, deployment, and observability solutions.",
+        "sector": "DevTools",
+        "stage": "Series B",
+        "location": "Portland, OR",
+        "website": "https://www.hashicorp.com",
+        "founded": 2019,
+        "funding": "$28M",
+        "employees": "60-100",
+        "logo": "CN",
+        "signals": [
+            {
+                "id": "s29",
+                "type": "funding",
+                "title": "Raised $28M Series B",
+                "date": "2024-11-25",
+                "description": "Led by Lightspeed Venture Partners."
+            },
+            {
+                "id": "s30",
+                "type": "press",
+                "title": "KubeCon Keynote Speaker",
+                "date": "2024-10-20",
+                "description": "CEO delivered keynote at KubeCon 2024."
+            }
+        ]
+    },
+    {
+        "id": "14",
+        "name": "BioSynth",
+        "description": "BioSynth uses synthetic biology and AI to accelerate drug discovery, reducing the preclinical development timeline by 50% through automated compound screening.",
+        "sector": "BioTech",
+        "stage": "Series A",
+        "location": "Cambridge, MA",
+        "website": "https://www.modernatx.com",
+        "founded": 2020,
+        "funding": "$22M",
+        "employees": "40-60",
+        "logo": "BS",
+        "signals": [
+            {
+                "id": "s31",
+                "type": "funding",
+                "title": "Raised $22M Series A",
+                "date": "2024-10-30",
+                "description": "Led by Arch Venture Partners."
+            },
+            {
+                "id": "s32",
+                "type": "product",
+                "title": "SynthScreen Platform Launch",
+                "date": "2024-09-15",
+                "description": "Automated high-throughput compound screening platform."
+            },
+            {
+                "id": "s33",
+                "type": "partnership",
+                "title": "Pfizer Collaboration",
+                "date": "2024-08-20",
+                "description": "Research collaboration agreement signed."
+            }
+        ]
+    },
+    {
+        "id": "15",
+        "name": "UrbanMobility",
+        "description": "UrbanMobility develops an integrated urban transportation platform combining ride-sharing, micro-mobility, and public transit into one seamless app experience.",
+        "sector": "Mobility",
+        "stage": "Series B",
+        "location": "Miami, FL",
+        "website": "https://www.uber.com",
+        "founded": 2019,
+        "funding": "$40M",
+        "employees": "80-150",
+        "logo": "UM",
+        "signals": [
+            {
+                "id": "s34",
+                "type": "funding",
+                "title": "Raised $40M Series B",
+                "date": "2024-12-05",
+                "description": "Led by SoftBank Vision Fund."
+            },
+            {
+                "id": "s35",
+                "type": "press",
+                "title": "City of Miami Partnership",
+                "date": "2024-11-10",
+                "description": "Official mobility partner for Miami-Dade County."
+            }
+        ]
+    },
+    {
+        "id": "16",
+        "name": "ContentForge",
+        "description": "ContentForge is an AI-powered content creation platform for marketing teams that generates, optimizes, and distributes branded content across channels.",
+        "sector": "MarTech",
+        "stage": "Seed",
+        "location": "Nashville, TN",
+        "website": "https://www.hubspot.com",
+        "founded": 2023,
+        "funding": "$3.5M",
+        "employees": "10-20",
+        "logo": "CF",
+        "signals": [
+            {
+                "id": "s36",
+                "type": "funding",
+                "title": "Raised $3.5M Seed",
+                "date": "2024-07-25",
+                "description": "From First Round Capital."
+            },
+            {
+                "id": "s37",
+                "type": "product",
+                "title": "Multi-channel Distribution",
+                "date": "2024-07-01",
+                "description": "Launched automated cross-platform content publishing."
+            }
+        ]
+    },
+    {
+        "id": "17",
+        "name": "SpaceForge",
+        "description": "SpaceForge manufactures small satellite components and provides orbital deployment services for earth observation and communications applications.",
+        "sector": "SpaceTech",
+        "stage": "Series A",
+        "location": "Houston, TX",
+        "website": "https://www.spacex.com",
+        "founded": 2020,
+        "funding": "$16M",
+        "employees": "30-50",
+        "logo": "SF",
+        "signals": [
+            {
+                "id": "s38",
+                "type": "funding",
+                "title": "Raised $16M Series A",
+                "date": "2024-09-25",
+                "description": "Led by Lux Capital."
+            },
+            {
+                "id": "s39",
+                "type": "product",
+                "title": "First Successful Launch",
+                "date": "2024-08-10",
+                "description": "First commercial satellite successfully deployed."
+            }
+        ]
+    },
+    {
+        "id": "18",
+        "name": "FoodLogic",
+        "description": "FoodLogic provides AI-driven demand forecasting and inventory management for restaurants and food service companies, reducing food waste by 35%.",
+        "sector": "FoodTech",
+        "stage": "Seed",
+        "location": "San Diego, CA",
+        "website": "https://www.doordash.com",
+        "founded": 2022,
+        "funding": "$4M",
+        "employees": "10-20",
+        "logo": "FL",
+        "signals": [
+            {
+                "id": "s40",
+                "type": "funding",
+                "title": "Raised $4M Seed",
+                "date": "2024-08-30",
+                "description": "From Techstars and food industry angels."
+            },
+            {
+                "id": "s41",
+                "type": "partnership",
+                "title": "Chipotle Pilot",
+                "date": "2024-07-15",
+                "description": "Selected for Chipotle's innovation program."
+            }
+        ]
+    },
+    {
+        "id": "19",
+        "name": "InsureTech Pro",
+        "description": "InsureTech Pro offers an AI-powered underwriting platform for property and casualty insurance, leveraging alternative data sources for better risk assessment.",
+        "sector": "InsurTech",
+        "stage": "Series A",
+        "location": "Hartford, CT",
+        "website": "https://www.geico.com",
+        "founded": 2021,
+        "funding": "$14M",
+        "employees": "35-55",
+        "logo": "IP",
+        "signals": [
+            {
+                "id": "s42",
+                "type": "funding",
+                "title": "Raised $14M Series A",
+                "date": "2024-10-20",
+                "description": "Led by Ribbit Capital."
+            },
+            {
+                "id": "s43",
+                "type": "product",
+                "title": "SmartUnderwrite Launch",
+                "date": "2024-09-05",
+                "description": "AI underwriting platform with satellite imagery integration."
+            }
+        ]
+    },
+    {
+        "id": "20",
+        "name": "QuantumLeap Computing",
+        "description": "QuantumLeap develops quantum computing middleware that enables classical-quantum hybrid workloads, making quantum resources accessible to enterprise developers.",
+        "sector": "Quantum Computing",
+        "stage": "Series A",
+        "location": "Boulder, CO",
+        "website": "https://www.ibm.com/quantum",
+        "founded": 2020,
+        "funding": "$20M",
+        "employees": "25-40",
+        "logo": "QL",
+        "signals": [
+            {
+                "id": "s44",
+                "type": "funding",
+                "title": "Raised $20M Series A",
+                "date": "2024-11-30",
+                "description": "Led by Google Ventures."
+            },
+            {
+                "id": "s45",
+                "type": "press",
+                "title": "Nature Publication",
+                "date": "2024-10-25",
+                "description": "Research team published breakthrough quantum error correction paper."
+            },
+            {
+                "id": "s46",
+                "type": "hire",
+                "title": "Hired 10 PhDs",
+                "date": "2024-09-10",
+                "description": "Major expansion of quantum research team."
+            }
+        ]
+    }
+]
