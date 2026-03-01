@@ -38,7 +38,19 @@ function checkPageSignals(html: string, url: string): { careers: boolean; blog: 
 
 export async function POST(request: NextRequest) {
     try {
-        const { url, companyName } = await request.json();
+        let url: string;
+        let companyName: string;
+
+        try {
+            const body = await request.json();
+            url = body.url;
+            companyName = body.companyName;
+        } catch {
+            return NextResponse.json(
+                { error: 'Invalid request body. Expected JSON with url and companyName.' },
+                { status: 400 }
+            );
+        }
 
         if (!url) {
             return NextResponse.json({ error: 'URL is required' }, { status: 400 });

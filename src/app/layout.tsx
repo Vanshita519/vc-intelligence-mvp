@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Sidebar from "../components/Sidebar";
 import GlobalSearch from "../components/GlobalSearch";
@@ -6,6 +6,13 @@ import GlobalSearch from "../components/GlobalSearch";
 export const metadata: Metadata = {
   title: "Scout AI — VC Intelligence Platform",
   description: "Discover, enrich, and track high-signal companies with AI-powered intelligence.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({
@@ -24,8 +31,8 @@ export default function RootLayout({
       <body>
         <Sidebar />
         <GlobalSearch />
-        <main className="ml-64 min-h-screen bg-gray-50">
-          <div className="max-w-7xl mx-auto px-6 py-6">
+        <main className="lg:ml-64 min-h-screen bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 py-4 pt-16 lg:pt-6 lg:px-6 lg:py-6">
             {children}
           </div>
         </main>

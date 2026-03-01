@@ -100,9 +100,9 @@ export default function ListsPage() {
     }, [addSearchQuery, allCompanies]);
 
     return (
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
             {/* Header */}
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div>
                     <h1 className="page-header">Lists</h1>
                     <p className="text-sm text-gray-500 mt-1">
@@ -111,7 +111,7 @@ export default function ListsPage() {
                 </div>
                 <button
                     onClick={() => setShowCreateModal(true)}
-                    className="btn-primary text-sm flex items-center gap-2"
+                    className="btn-primary text-sm flex items-center gap-2 self-start sm:self-auto"
                 >
                     <Plus className="w-4 h-4" />
                     Create List
@@ -120,7 +120,7 @@ export default function ListsPage() {
 
             {/* Lists */}
             {lists.length === 0 ? (
-                <div className="card p-12 text-center">
+                <div className="card p-8 sm:p-12 text-center">
                     <List className="w-12 h-12 text-gray-300 mx-auto mb-3" />
                     <h3 className="text-lg font-medium text-gray-900 mb-1">No lists yet</h3>
                     <p className="text-sm text-gray-500 mb-4">
@@ -145,45 +145,45 @@ export default function ListsPage() {
                             <div key={list.id} className="card overflow-hidden">
                                 {/* List Header */}
                                 <div
-                                    className="p-4 flex items-center justify-between cursor-pointer hover:bg-gray-50 transition-colors"
+                                    className="p-3 sm:p-4 flex items-center justify-between cursor-pointer hover:bg-gray-50 transition-colors gap-2"
                                     onClick={() => setExpandedListId(isExpanded ? null : list.id)}
                                 >
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center">
-                                            <List className="w-5 h-5 text-primary-600" />
+                                    <div className="flex items-center gap-3 min-w-0">
+                                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-primary-50 flex items-center justify-center shrink-0">
+                                            <List className="w-4 h-4 sm:w-5 sm:h-5 text-primary-600" />
                                         </div>
-                                        <div>
-                                            <h3 className="text-sm font-semibold text-gray-900">{list.name}</h3>
+                                        <div className="min-w-0">
+                                            <h3 className="text-sm font-semibold text-gray-900 truncate">{list.name}</h3>
                                             <p className="text-xs text-gray-400">
-                                                {companies.length} companies · Updated{' '}
-                                                {new Date(list.updatedAt).toLocaleDateString()}
+                                                {companies.length} companies · {new Date(list.updatedAt).toLocaleDateString()}
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="flex items-center gap-2">
+                                    <div className="flex items-center gap-1 shrink-0">
                                         <button
                                             onClick={(e) => { e.stopPropagation(); setShowAddCompanyModal(list.id); }}
-                                            className="btn-ghost text-xs flex items-center gap-1"
+                                            className="btn-ghost text-xs flex items-center gap-1 p-1.5 sm:p-2"
                                         >
-                                            <Plus className="w-3.5 h-3.5" /> Add
+                                            <Plus className="w-3.5 h-3.5" />
+                                            <span className="hidden sm:inline">Add</span>
                                         </button>
                                         <button
                                             onClick={(e) => { e.stopPropagation(); handleExportCSV(list); }}
-                                            className="btn-ghost text-xs flex items-center gap-1"
+                                            className="btn-ghost text-xs p-1.5 sm:p-2"
                                             title="Export CSV"
                                         >
                                             <FileSpreadsheet className="w-3.5 h-3.5" />
                                         </button>
                                         <button
                                             onClick={(e) => { e.stopPropagation(); handleExportJSON(list); }}
-                                            className="btn-ghost text-xs flex items-center gap-1"
+                                            className="btn-ghost text-xs p-1.5 sm:p-2 hidden sm:flex"
                                             title="Export JSON"
                                         >
                                             <FileJson className="w-3.5 h-3.5" />
                                         </button>
                                         <button
                                             onClick={(e) => { e.stopPropagation(); handleDeleteList(list.id); }}
-                                            className="btn-ghost text-xs text-red-500 hover:text-red-600"
+                                            className="btn-ghost text-xs text-red-500 hover:text-red-600 p-1.5 sm:p-2"
                                         >
                                             <Trash2 className="w-3.5 h-3.5" />
                                         </button>
@@ -205,23 +205,23 @@ export default function ListsPage() {
                                                 {companies.map((company) => (
                                                     <div
                                                         key={company.id}
-                                                        className="p-3 px-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                                                        className="p-3 px-3 sm:px-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
                                                     >
                                                         <div
-                                                            className="flex items-center gap-3 cursor-pointer flex-1"
+                                                            className="flex items-center gap-3 cursor-pointer flex-1 min-w-0"
                                                             onClick={() => router.push(`/companies/${company.id}`)}
                                                         >
-                                                            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center text-primary-700 font-bold text-xs">
+                                                            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center text-primary-700 font-bold text-xs shrink-0">
                                                                 {company.logo}
                                                             </div>
-                                                            <div>
-                                                                <p className="text-sm font-medium text-gray-900">{company.name}</p>
-                                                                <p className="text-xs text-gray-400">{company.sector} · {company.stage}</p>
+                                                            <div className="min-w-0">
+                                                                <p className="text-sm font-medium text-gray-900 truncate">{company.name}</p>
+                                                                <p className="text-xs text-gray-400 truncate">{company.sector} · {company.stage}</p>
                                                             </div>
                                                         </div>
                                                         <button
                                                             onClick={() => handleRemoveCompany(list.id, company.id)}
-                                                            className="p-1.5 hover:bg-red-50 rounded text-gray-400 hover:text-red-500 transition-colors"
+                                                            className="p-1.5 hover:bg-red-50 rounded text-gray-400 hover:text-red-500 transition-colors shrink-0"
                                                         >
                                                             <X className="w-3.5 h-3.5" />
                                                         </button>
@@ -292,15 +292,15 @@ export default function ListsPage() {
                                         disabled={isAlreadyInList}
                                         className="w-full flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors text-left disabled:opacity-50"
                                     >
-                                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center text-primary-700 font-bold text-xs">
+                                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center text-primary-700 font-bold text-xs shrink-0">
                                             {company.logo}
                                         </div>
-                                        <div className="flex-1">
-                                            <p className="text-sm font-medium text-gray-900">{company.name}</p>
-                                            <p className="text-xs text-gray-400">{company.sector}</p>
+                                        <div className="flex-1 min-w-0">
+                                            <p className="text-sm font-medium text-gray-900 truncate">{company.name}</p>
+                                            <p className="text-xs text-gray-400 truncate">{company.sector}</p>
                                         </div>
                                         {isAlreadyInList && (
-                                            <span className="text-xs text-gray-400">Added</span>
+                                            <span className="text-xs text-gray-400 shrink-0">Added</span>
                                         )}
                                     </button>
                                 );

@@ -128,7 +128,7 @@ export default function CompanyProfilePage() {
     }
 
     return (
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
             {/* Back button */}
             <button
                 onClick={() => router.push('/companies')}
@@ -139,19 +139,19 @@ export default function CompanyProfilePage() {
             </button>
 
             {/* Header */}
-            <div className="card p-6">
-                <div className="flex items-start justify-between">
-                    <div className="flex items-start gap-4">
-                        <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center text-primary-700 font-bold text-xl shrink-0">
+            <div className="card p-4 sm:p-6">
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center text-primary-700 font-bold text-lg sm:text-xl shrink-0">
                             {company.logo}
                         </div>
-                        <div>
-                            <h1 className="text-2xl font-bold text-gray-900">{company.name}</h1>
-                            <p className="text-gray-500 mt-1 max-w-2xl">{company.description}</p>
-                            <div className="flex flex-wrap items-center gap-3 mt-3">
+                        <div className="min-w-0">
+                            <h1 className="text-xl sm:text-2xl font-bold text-gray-900">{company.name}</h1>
+                            <p className="text-gray-500 mt-1 text-sm sm:text-base line-clamp-2">{company.description}</p>
+                            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-2 sm:mt-3">
                                 <span className="badge-blue">{company.sector}</span>
                                 <span className="badge-green">{company.stage}</span>
-                                <span className="flex items-center gap-1 text-sm text-gray-500">
+                                <span className="flex items-center gap-1 text-xs sm:text-sm text-gray-500">
                                     <MapPin className="w-3.5 h-3.5" />
                                     {company.location}
                                 </span>
@@ -163,10 +163,11 @@ export default function CompanyProfilePage() {
                         <div className="relative">
                             <button
                                 onClick={() => setShowListDropdown(!showListDropdown)}
-                                className="btn-secondary text-sm flex items-center gap-2"
+                                className="btn-secondary text-xs sm:text-sm flex items-center gap-2"
                             >
                                 <ListPlus className="w-4 h-4" />
-                                Save to List
+                                <span className="hidden sm:inline">Save to List</span>
+                                <span className="sm:hidden">Save</span>
                             </button>
                             {showListDropdown && (
                                 <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl border border-gray-200 shadow-lg z-10 py-1">
@@ -197,9 +198,9 @@ export default function CompanyProfilePage() {
                         <button
                             onClick={handleEnrich}
                             disabled={enrichmentLoading || !!enrichment}
-                            className={`text-sm flex items-center gap-2 ${enrichment
-                                    ? 'btn-secondary text-green-600 border-green-200 bg-green-50'
-                                    : 'btn-primary'
+                            className={`text-xs sm:text-sm flex items-center gap-2 ${enrichment
+                                ? 'btn-secondary text-green-600 border-green-200 bg-green-50'
+                                : 'btn-primary'
                                 }`}
                         >
                             {enrichmentLoading ? (
@@ -215,45 +216,45 @@ export default function CompanyProfilePage() {
                 </div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 pt-6 border-t border-gray-100">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-100">
                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-green-50 flex items-center justify-center">
-                            <DollarSign className="w-5 h-5 text-green-600" />
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-green-50 flex items-center justify-center">
+                            <DollarSign className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                         </div>
                         <div>
-                            <p className="text-xs text-gray-400">Funding</p>
-                            <p className="text-sm font-semibold text-gray-900">{company.funding}</p>
+                            <p className="text-[10px] sm:text-xs text-gray-400">Funding</p>
+                            <p className="text-xs sm:text-sm font-semibold text-gray-900">{company.funding}</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center">
-                            <Users className="w-5 h-5 text-blue-600" />
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-blue-50 flex items-center justify-center">
+                            <Users className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
                         </div>
                         <div>
-                            <p className="text-xs text-gray-400">Employees</p>
-                            <p className="text-sm font-semibold text-gray-900">{company.employees}</p>
+                            <p className="text-[10px] sm:text-xs text-gray-400">Employees</p>
+                            <p className="text-xs sm:text-sm font-semibold text-gray-900">{company.employees}</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center">
-                            <Calendar className="w-5 h-5 text-purple-600" />
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-purple-50 flex items-center justify-center">
+                            <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
                         </div>
                         <div>
-                            <p className="text-xs text-gray-400">Founded</p>
-                            <p className="text-sm font-semibold text-gray-900">{company.founded}</p>
+                            <p className="text-[10px] sm:text-xs text-gray-400">Founded</p>
+                            <p className="text-xs sm:text-sm font-semibold text-gray-900">{company.founded}</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center">
-                            <Globe className="w-5 h-5 text-amber-600" />
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-amber-50 flex items-center justify-center">
+                            <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600" />
                         </div>
                         <div>
-                            <p className="text-xs text-gray-400">Website</p>
+                            <p className="text-[10px] sm:text-xs text-gray-400">Website</p>
                             <a
                                 href={company.website}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-sm font-semibold text-primary-600 hover:text-primary-700 flex items-center gap-1"
+                                className="text-xs sm:text-sm font-semibold text-primary-600 hover:text-primary-700 flex items-center gap-1"
                             >
                                 Visit <ExternalLink className="w-3 h-3" />
                             </a>
@@ -262,12 +263,12 @@ export default function CompanyProfilePage() {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
                 {/* Left column: Signals + Notes */}
-                <div className="lg:col-span-2 space-y-6">
+                <div className="lg:col-span-2 space-y-4 sm:space-y-6">
                     {/* Signals Timeline */}
-                    <div className="card p-6">
-                        <h2 className="section-header flex items-center gap-2 mb-5">
+                    <div className="card p-4 sm:p-6">
+                        <h2 className="section-header flex items-center gap-2 mb-4 sm:mb-5">
                             <TrendingUp className="w-5 h-5 text-gray-400" />
                             Signals Timeline
                         </h2>
@@ -275,25 +276,25 @@ export default function CompanyProfilePage() {
                             {company.signals.map((signal: Signal, index: number) => {
                                 const Icon = signalIcons[signal.type] || TrendingUp;
                                 return (
-                                    <div key={signal.id} className="flex gap-4 relative">
+                                    <div key={signal.id} className="flex gap-3 sm:gap-4 relative">
                                         {/* Timeline line */}
                                         {index < company.signals.length - 1 && (
-                                            <div className="absolute left-[15px] top-[30px] w-0.5 h-[calc(100%)] bg-gray-200" />
+                                            <div className="absolute left-[13px] sm:left-[15px] top-[28px] sm:top-[30px] w-0.5 h-[calc(100%)] bg-gray-200" />
                                         )}
                                         {/* Dot */}
-                                        <div className={`w-[30px] h-[30px] rounded-full ${signalColors[signal.type]} flex items-center justify-center shrink-0 z-10`}>
-                                            <Icon className="w-3.5 h-3.5 text-white" />
+                                        <div className={`w-[26px] h-[26px] sm:w-[30px] sm:h-[30px] rounded-full ${signalColors[signal.type]} flex items-center justify-center shrink-0 z-10`}>
+                                            <Icon className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" />
                                         </div>
                                         {/* Content */}
-                                        <div className="pb-6 min-w-0 flex-1">
-                                            <div className="flex items-start justify-between gap-2">
+                                        <div className="pb-5 sm:pb-6 min-w-0 flex-1">
+                                            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-2">
                                                 <p className="text-sm font-medium text-gray-900">{signal.title}</p>
-                                                <span className="text-xs text-gray-400 whitespace-nowrap flex items-center gap-1">
+                                                <span className="text-[10px] sm:text-xs text-gray-400 whitespace-nowrap flex items-center gap-1">
                                                     <Clock className="w-3 h-3" />
                                                     {new Date(signal.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                                                 </span>
                                             </div>
-                                            <p className="text-sm text-gray-500 mt-0.5">{signal.description}</p>
+                                            <p className="text-xs sm:text-sm text-gray-500 mt-0.5">{signal.description}</p>
                                         </div>
                                     </div>
                                 );
@@ -303,7 +304,7 @@ export default function CompanyProfilePage() {
 
                     {/* Enrichment Results */}
                     {enrichmentError && (
-                        <div className="card p-6 border-red-200 bg-red-50">
+                        <div className="card p-4 sm:p-6 border-red-200 bg-red-50">
                             <div className="flex items-start gap-3">
                                 <XCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
                                 <div>
@@ -318,7 +319,7 @@ export default function CompanyProfilePage() {
                     )}
 
                     {enrichmentLoading && (
-                        <div className="card p-8">
+                        <div className="card p-6 sm:p-8">
                             <div className="flex flex-col items-center justify-center gap-3">
                                 <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center">
                                     <Loader2 className="w-6 h-6 text-primary-600 animate-spin" />
@@ -336,8 +337,8 @@ export default function CompanyProfilePage() {
 
                     {enrichment && (
                         <div className="space-y-4">
-                            <div className="card p-6">
-                                <div className="flex items-center justify-between mb-4">
+                            <div className="card p-4 sm:p-6">
+                                <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
                                     <h2 className="section-header flex items-center gap-2">
                                         <Sparkles className="w-5 h-5 text-primary-500" />
                                         AI Enrichment
@@ -383,7 +384,7 @@ export default function CompanyProfilePage() {
                                 {/* Derived Signals */}
                                 <div className="mb-5">
                                     <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Derived Signals</h3>
-                                    <div className="grid grid-cols-2 gap-2">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                                         {enrichment.derivedSignals.map((signal, i) => (
                                             <div key={i} className="flex items-center gap-2 text-sm p-2 rounded-lg bg-gray-50">
                                                 {signal.present ? (
@@ -411,9 +412,9 @@ export default function CompanyProfilePage() {
                                                 rel="noopener noreferrer"
                                                 className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 hover:bg-primary-50 rounded-lg p-1.5 -ml-1.5 transition-colors"
                                             >
-                                                <LinkIcon className="w-3.5 h-3.5" />
-                                                {source.title}
-                                                <ExternalLink className="w-3 h-3 ml-auto text-gray-300" />
+                                                <LinkIcon className="w-3.5 h-3.5 shrink-0" />
+                                                <span className="truncate">{source.title}</span>
+                                                <ExternalLink className="w-3 h-3 ml-auto shrink-0 text-gray-300" />
                                             </a>
                                         ))}
                                     </div>
@@ -424,8 +425,8 @@ export default function CompanyProfilePage() {
                 </div>
 
                 {/* Right column: Notes */}
-                <div className="space-y-6">
-                    <div className="card p-6">
+                <div className="space-y-4 sm:space-y-6">
+                    <div className="card p-4 sm:p-6">
                         <h2 className="section-header flex items-center gap-2 mb-4">
                             <StickyNote className="w-5 h-5 text-gray-400" />
                             Notes
@@ -436,7 +437,7 @@ export default function CompanyProfilePage() {
                             onChange={(e) =>
                                 setNotes((prev) => ({ ...prev, [id]: e.target.value }))
                             }
-                            className="input-field min-h-[200px] resize-y text-sm"
+                            className="input-field min-h-[150px] sm:min-h-[200px] resize-y text-sm"
                         />
                         <p className="text-xs text-gray-400 mt-2">
                             Notes are saved automatically to your browser.
@@ -444,7 +445,7 @@ export default function CompanyProfilePage() {
                     </div>
 
                     {/* Quick Info */}
-                    <div className="card p-6">
+                    <div className="card p-4 sm:p-6">
                         <h2 className="section-header mb-4">Quick Info</h2>
                         <dl className="space-y-3">
                             <div>

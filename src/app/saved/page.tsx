@@ -30,7 +30,7 @@ export default function SavedSearchesPage() {
     };
 
     return (
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
             {/* Header */}
             <div>
                 <h1 className="page-header">Saved Searches</h1>
@@ -41,7 +41,7 @@ export default function SavedSearchesPage() {
 
             {/* Saved Searches List */}
             {savedSearches.length === 0 ? (
-                <div className="card p-12 text-center">
+                <div className="card p-8 sm:p-12 text-center">
                     <Bookmark className="w-12 h-12 text-gray-300 mx-auto mb-3" />
                     <h3 className="text-lg font-medium text-gray-900 mb-1">No saved searches</h3>
                     <p className="text-sm text-gray-500 mb-4">
@@ -57,15 +57,15 @@ export default function SavedSearchesPage() {
             ) : (
                 <div className="space-y-3">
                     {savedSearches.map((search) => (
-                        <div key={search.id} className="card p-5">
-                            <div className="flex items-start justify-between">
+                        <div key={search.id} className="card p-4 sm:p-5">
+                            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
                                 <div className="flex items-start gap-3">
-                                    <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center shrink-0">
-                                        <Bookmark className="w-5 h-5 text-amber-600" />
+                                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-amber-50 flex items-center justify-center shrink-0">
+                                        <Bookmark className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600" />
                                     </div>
-                                    <div>
+                                    <div className="min-w-0">
                                         <h3 className="text-sm font-semibold text-gray-900">{search.name}</h3>
-                                        <div className="flex flex-wrap items-center gap-2 mt-2">
+                                        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-2">
                                             {search.filters.query && (
                                                 <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-xs">
                                                     <Search className="w-3 h-3" />
@@ -99,7 +99,7 @@ export default function SavedSearchesPage() {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-2 shrink-0">
+                                <div className="flex items-center gap-2 shrink-0 self-end sm:self-start">
                                     <button
                                         onClick={() => handleRerun(search)}
                                         className="btn-primary text-xs flex items-center gap-1.5"

@@ -12,6 +12,7 @@ import {
     BookmarkPlus,
     X,
     SlidersHorizontal,
+    MapPin,
 } from 'lucide-react';
 import {
     getAllCompanies,
@@ -135,9 +136,9 @@ export default function CompaniesPage() {
     );
 
     return (
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
             {/* Header */}
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div>
                     <h1 className="page-header">Companies</h1>
                     <p className="text-sm text-gray-500 mt-1">
@@ -150,7 +151,7 @@ export default function CompaniesPage() {
                         className={`btn-secondary flex items-center gap-2 text-sm ${showFilters ? 'ring-2 ring-primary-500/20 border-primary-300' : ''}`}
                     >
                         <SlidersHorizontal className="w-4 h-4" />
-                        Filters
+                        <span className="hidden sm:inline">Filters</span>
                         {hasActiveFilters && (
                             <span className="w-2 h-2 rounded-full bg-primary-500"></span>
                         )}
@@ -161,7 +162,7 @@ export default function CompaniesPage() {
                         disabled={!hasActiveFilters}
                     >
                         <BookmarkPlus className="w-4 h-4" />
-                        Save Search
+                        <span className="hidden sm:inline">Save Search</span>
                     </button>
                 </div>
             </div>
@@ -172,7 +173,7 @@ export default function CompaniesPage() {
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                     <input
                         type="text"
-                        placeholder="Search companies by name, sector, or description..."
+                        placeholder="Search companies..."
                         value={query}
                         onChange={(e) => { setQuery(e.target.value); setCurrentPage(1); }}
                         className="input-field pl-10"
@@ -188,52 +189,54 @@ export default function CompaniesPage() {
                 </div>
 
                 {showFilters && (
-                    <div className="card p-4 flex flex-wrap items-center gap-3">
-                        <div className="flex items-center gap-2">
-                            <Filter className="w-4 h-4 text-gray-400" />
-                            <span className="text-sm text-gray-500">Filter by:</span>
+                    <div className="card p-4">
+                        <div className="flex flex-wrap items-center gap-3">
+                            <div className="flex items-center gap-2 w-full sm:w-auto">
+                                <Filter className="w-4 h-4 text-gray-400" />
+                                <span className="text-sm text-gray-500">Filter by:</span>
+                            </div>
+                            <select
+                                value={sector}
+                                onChange={(e) => { setSector(e.target.value); setCurrentPage(1); }}
+                                className="select-field text-sm flex-1 sm:flex-none min-w-0"
+                            >
+                                <option value="">All Sectors</option>
+                                {sectors.map((s) => (
+                                    <option key={s} value={s}>{s}</option>
+                                ))}
+                            </select>
+                            <select
+                                value={stage}
+                                onChange={(e) => { setStage(e.target.value); setCurrentPage(1); }}
+                                className="select-field text-sm flex-1 sm:flex-none min-w-0"
+                            >
+                                <option value="">All Stages</option>
+                                {stages.map((s) => (
+                                    <option key={s} value={s}>{s}</option>
+                                ))}
+                            </select>
+                            <select
+                                value={location}
+                                onChange={(e) => { setLocation(e.target.value); setCurrentPage(1); }}
+                                className="select-field text-sm flex-1 sm:flex-none min-w-0"
+                            >
+                                <option value="">All Locations</option>
+                                {locations.map((l) => (
+                                    <option key={l} value={l}>{l}</option>
+                                ))}
+                            </select>
+                            {hasActiveFilters && (
+                                <button onClick={clearFilters} className="btn-ghost text-sm text-red-500 hover:text-red-600 flex items-center gap-1">
+                                    <X className="w-3.5 h-3.5" /> Clear
+                                </button>
+                            )}
                         </div>
-                        <select
-                            value={sector}
-                            onChange={(e) => { setSector(e.target.value); setCurrentPage(1); }}
-                            className="select-field text-sm"
-                        >
-                            <option value="">All Sectors</option>
-                            {sectors.map((s) => (
-                                <option key={s} value={s}>{s}</option>
-                            ))}
-                        </select>
-                        <select
-                            value={stage}
-                            onChange={(e) => { setStage(e.target.value); setCurrentPage(1); }}
-                            className="select-field text-sm"
-                        >
-                            <option value="">All Stages</option>
-                            {stages.map((s) => (
-                                <option key={s} value={s}>{s}</option>
-                            ))}
-                        </select>
-                        <select
-                            value={location}
-                            onChange={(e) => { setLocation(e.target.value); setCurrentPage(1); }}
-                            className="select-field text-sm"
-                        >
-                            <option value="">All Locations</option>
-                            {locations.map((l) => (
-                                <option key={l} value={l}>{l}</option>
-                            ))}
-                        </select>
-                        {hasActiveFilters && (
-                            <button onClick={clearFilters} className="btn-ghost text-sm text-red-500 hover:text-red-600 flex items-center gap-1">
-                                <X className="w-3.5 h-3.5" /> Clear
-                            </button>
-                        )}
                     </div>
                 )}
             </div>
 
-            {/* Table */}
-            <div className="card overflow-hidden">
+            {/* Desktop Table (hidden on mobile) */}
+            <div className="card overflow-hidden hidden md:block">
                 <div className="overflow-x-auto">
                     <table className="data-table">
                         <thead>
@@ -309,7 +312,7 @@ export default function CompaniesPage() {
                     </table>
                 </div>
 
-                {/* Pagination */}
+                {/* Desktop Pagination */}
                 {totalPages > 1 && (
                     <div className="flex items-center justify-between px-4 py-3 border-t border-gray-100">
                         <p className="text-sm text-gray-500">
@@ -330,8 +333,8 @@ export default function CompaniesPage() {
                                     key={page}
                                     onClick={() => setCurrentPage(page)}
                                     className={`w-8 h-8 rounded-lg text-sm font-medium transition-all ${page === currentPage
-                                            ? 'bg-primary-600 text-white shadow-sm'
-                                            : 'text-gray-600 hover:bg-gray-100'
+                                        ? 'bg-primary-600 text-white shadow-sm'
+                                        : 'text-gray-600 hover:bg-gray-100'
                                         }`}
                                 >
                                     {page}
@@ -341,6 +344,74 @@ export default function CompaniesPage() {
                                 onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                                 disabled={currentPage === totalPages}
                                 className="btn-ghost p-2 disabled:opacity-30"
+                            >
+                                <ChevronRight className="w-4 h-4" />
+                            </button>
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            {/* Mobile Card View (visible only on mobile) */}
+            <div className="md:hidden space-y-3">
+                {paginatedCompanies.length === 0 ? (
+                    <div className="card p-8 text-center text-gray-400 text-sm">
+                        No companies match your filters.
+                    </div>
+                ) : (
+                    paginatedCompanies.map((company) => (
+                        <div
+                            key={company.id}
+                            onClick={() => router.push(`/companies/${company.id}`)}
+                            className="card p-4 active:bg-gray-50 cursor-pointer"
+                        >
+                            <div className="flex items-start gap-3">
+                                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center text-primary-700 font-bold text-sm shrink-0">
+                                    {company.logo}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <p className="font-medium text-gray-900 text-sm">{company.name}</p>
+                                    <p className="text-xs text-gray-400 truncate mt-0.5">
+                                        {company.description.substring(0, 50)}...
+                                    </p>
+                                    <div className="flex flex-wrap items-center gap-1.5 mt-2">
+                                        <span className={`${getStageBadgeClass(company.stage)} text-[10px] px-2 py-0.5`}>
+                                            {company.stage}
+                                        </span>
+                                        <span className="text-xs text-gray-500">{company.sector}</span>
+                                    </div>
+                                    <div className="flex items-center justify-between mt-2 pt-2 border-t border-gray-50">
+                                        <span className="text-xs text-gray-500 flex items-center gap-1">
+                                            <MapPin className="w-3 h-3" />
+                                            {company.location}
+                                        </span>
+                                        <span className="text-xs font-medium text-gray-700">{company.funding}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                )}
+
+                {/* Mobile Pagination */}
+                {totalPages > 1 && (
+                    <div className="flex items-center justify-between py-2">
+                        <p className="text-xs text-gray-500">
+                            {(currentPage - 1) * ITEMS_PER_PAGE + 1}–{Math.min(currentPage * ITEMS_PER_PAGE, filteredCompanies.length)} of {filteredCompanies.length}
+                        </p>
+                        <div className="flex items-center gap-2">
+                            <button
+                                onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                                disabled={currentPage === 1}
+                                className="btn-secondary py-1.5 px-3 text-xs disabled:opacity-30"
+                            >
+                                <ChevronLeft className="w-4 h-4" />
+                            </button>
+                            <span className="text-sm font-medium text-gray-700">{currentPage}/{totalPages}</span>
+                            <button
+                                onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                                disabled={currentPage === totalPages}
+                                className="btn-secondary py-1.5 px-3 text-xs disabled:opacity-30"
                             >
                                 <ChevronRight className="w-4 h-4" />
                             </button>
